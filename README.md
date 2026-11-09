@@ -1,7 +1,7 @@
 # YouTube scraper for Node.js and JavaScript
 
 [![Live check](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml)
-[![last verified](https://img.shields.io/badge/last%20verified-9%20Nov%202026-brightgreen)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
+[![last check failed](https://img.shields.io/badge/last%20check%20failed-9%20Nov%202026-red)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
 
 [Quickstart](#how-to-scrape-youtube-videos-with-nodejs) · [No API key](#scrape-youtube-without-the-youtube-data-api) · [CLI](#bulk-youtube-search-scraper-cli) · [Endpoints](#scrape-youtube-videos-transcripts-shorts-channels-and-comments) · [Transcripts](#scrape-youtube-video-transcripts) · [Data](#youtube-video-data-fields-json) · [Errors](#youtube-scraper-errors) · [MCP and Claude Code](#youtube-mcp-server-and-claude-code-skill) · [Free credits](#is-this-youtube-scraper-free) · [Docs](https://docs.brightdata.com/products/scrapers/youtube/introduction) · [Support](#support)
 
