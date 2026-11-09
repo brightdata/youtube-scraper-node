@@ -38,7 +38,7 @@ on:
     inputs:
       keywords:
         description: Search keywords, separated by commas
-        default: python tutorial, sourdough bread recipe
+        default: python tutorial, home workout
       limit:
         description: How many videos to fetch for each keyword
         default: "2"
@@ -219,7 +219,7 @@ jobs:
     name: "${{ matrix.n }}. ${{ matrix.title }}"
     needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: 45  # a snippet waits up to 15 minutes, and gets one retry; past this is stuck
+    timeout-minutes: 75  # a block may run two 15-minute searches back to back, and gets one retry
     strategy:
       fail-fast: false
       matrix:

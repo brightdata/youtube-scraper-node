@@ -17,7 +17,7 @@ import { setTimeout as sleep } from "node:timers/promises";
 const README = fileURLToPath(new URL("../../README.md", import.meta.url));
 const SKIP = ["npm install", "npm i ", "export ", "npx -p @brightdata/cli bdata login", "bdata login"];
 const CLI = process.env.BDATA_CLI ?? ""; // the pinned CLI version; empty means whatever is installed
-const TIMEOUT_MS = 1_080_000; // a snippet waits up to 15 minutes for the API
+const TIMEOUT_MS = 1_920_000; // a block may run two searches, each waiting up to 15 minutes
 // spawnSync kills a child that prints more than 1 MB by default, and reports
 // exit null. Two YouTube videos as pretty JSON from the CLI came to 2.8 MB.
 const MAX_BUFFER = 64 * 1024 * 1024;
@@ -105,7 +105,7 @@ async function run(n) {
     out = (done.stdout ?? "").trim();
     err = (done.stderr ?? "").trim();
     if (done.error?.code === "ETIMEDOUT" || done.signal) {
-      err = err || "block timeout: no result within 18 minutes";
+      err = err || "block timeout: no result within 32 minutes";
     }
     if (secret) {
       // summaries are not secret-masked the way logs are
