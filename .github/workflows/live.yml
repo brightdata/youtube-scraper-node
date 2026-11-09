@@ -236,6 +236,7 @@ jobs:
           LANG_: ${{ matrix.lang }}
         run: |
           npm install
+          npm link  # puts youtube-scraper on PATH, for the README's CLI block
           if [ "$LANG_" = "bash" ]; then npm i -g "@brightdata/cli@$BDATA_CLI"; fi
       - name: Run block ${{ matrix.n }} exactly as the README shows it
         env:

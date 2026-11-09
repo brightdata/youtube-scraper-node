@@ -18,6 +18,9 @@ const README = fileURLToPath(new URL("../../README.md", import.meta.url));
 const SKIP = ["npm install", "npm i ", "export ", "npx -p @brightdata/cli bdata login", "bdata login"];
 const CLI = process.env.BDATA_CLI ?? ""; // the pinned CLI version; empty means whatever is installed
 const TIMEOUT_MS = 1_080_000; // a snippet waits up to 15 minutes for the API
+// spawnSync kills a child that prints more than 1 MB by default, and reports
+// exit null. Two YouTube videos as pretty JSON from the CLI came to 2.8 MB.
+const MAX_BUFFER = 64 * 1024 * 1024;
 
 export function blocks() {
   // never execute anything inside the generated field table: its text comes from
@@ -90,11 +93,13 @@ async function run(n) {
         ? spawnSync("bash", ["-e", "-c", cliLines(b.code, '"$BRIGHTDATA_API_TOKEN"')], {
             encoding: "utf8",
             timeout: TIMEOUT_MS,
+            maxBuffer: MAX_BUFFER,
           })
         : spawnSync(process.execPath, ["--input-type=module"], {
             input: b.code,
             encoding: "utf8",
             timeout: TIMEOUT_MS,
+            maxBuffer: MAX_BUFFER,
           });
     secs = Math.round((Date.now() - started) / 1000);
     out = (done.stdout ?? "").trim();
