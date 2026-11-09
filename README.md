@@ -1,7 +1,7 @@
 # YouTube scraper for Node.js and JavaScript
 
 Scrape YouTube videos, transcripts, Shorts, comments and channels to JSON with Node.js and JavaScript. No YouTube Data API key, no quota.
-Built on the [Bright Data YouTube Scraper API](https://brightdata.com/products/web-scraper/youtube?utm_source=github). New accounts get 5,000 free credits a month.
+Built on the [Bright Data YouTube Scraper API](https://brightdata.com/products/web-scraper/youtube?utm_source=github&utm_medium=referral&utm_content=youtube-scraper-node). New accounts get 5,000 free credits a month.
 
 [![Live check](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml)
 [![last verified](https://img.shields.io/badge/last%20verified-9%20Nov%202026-brightgreen)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
@@ -13,7 +13,7 @@ transcripts and chapters, search results, hashtags, channels, comments and
 podcast episodes. All three Bright Data YouTube scrapers and all ten of their
 methods, one function each. No YouTube Data API key, no quota, no browser, no
 dependencies. Built on the
-[Bright Data YouTube Scraper API](https://brightdata.com/products/web-scraper/youtube?utm_source=github).
+[Bright Data YouTube Scraper API](https://brightdata.com/products/web-scraper/youtube?utm_source=github&utm_medium=referral&utm_content=youtube-scraper-node).
 
 Also here: a one-command CLI for keyword searches, and the
 [Bright Data CLI](#youtube-mcp-server-and-claude-code-skill), which needs no JavaScript at all.
