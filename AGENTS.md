@@ -65,14 +65,14 @@ is written here.
 - CI follows the README's own commands on an empty machine, finding its
   sections by their exact H2 text. Rename a heading in ci.yml too.
 - A weekly workflow executes every fenced block in the README against the real
-  API, and a daily one runs a smaller live check. A snippet must be complete
+  API, and the same run also does a smaller live check. A snippet must be complete
   and paste-able on its own, and its shown output must be real.
 - The field tables in the README sit between `<!-- fields:start -->` and
-  `<!-- fields:end -->` and are regenerated daily by
+  `<!-- fields:end -->` and are regenerated weekly by
   `.github/scripts/field_tables.mjs` from
   https://docs.brightdata.com/scrapers-full.json. Do not edit them by hand.
 - The "last verified" badge line at the top of the README is rewritten by the
-  daily run. Do not edit it by hand.
+  weekly run. Do not edit it by hand.
 - Headings are written for search: "YouTube scraper for Node.js and JavaScript",
   "How to scrape YouTube ...". Keep that pattern when adding a section.
 - Keep it small. Beyond the status poll, do not add retries, deduplication,

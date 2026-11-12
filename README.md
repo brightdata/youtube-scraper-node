@@ -4,7 +4,7 @@ Scrape YouTube videos, transcripts, Shorts, comments and channels to JSON with N
 Built on the [Bright Data YouTube Scraper API](https://brightdata.com/products/web-scraper/youtube?utm_source=github&utm_medium=referral&utm_content=youtube-scraper-node). New accounts get 5,000 free credits a month.
 
 [![Live check](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml)
-[![last verified](https://img.shields.io/badge/last%20verified-11%20Nov%202026-brightgreen)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
+[![last verified](https://img.shields.io/badge/last%20verified-11%20Nov%202026-brightgreen)](https://github.com/brightdata/youtube-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the weekly run -->
 
 [Quickstart](#how-to-scrape-youtube-videos-with-nodejs) · [No API key](#scrape-youtube-without-the-youtube-data-api) · [CLI](#bulk-youtube-search-scraper-cli) · [Endpoints](#scrape-youtube-videos-transcripts-shorts-channels-and-comments) · [Transcripts](#scrape-youtube-video-transcripts) · [Data](#youtube-video-data-fields-json) · [Errors](#youtube-scraper-errors) · [MCP and Claude Code](#youtube-mcp-server-and-claude-code-skill) · [Free credits](#is-this-youtube-scraper-free) · [Docs](https://docs.brightdata.com/products/scrapers/youtube/introduction) · [Support](#support)
 
@@ -451,7 +451,7 @@ The code hardcodes no field list. Whatever the API returns lands in each row,
 and in the command's file.
 
 <!-- fields:start -->
-Regenerated every day from the published schema,
+Regenerated every week from the published schema,
 [scrapers-full.json](https://docs.brightdata.com/scrapers-full.json), so they cannot go stale. A record
 carries the fields that apply to it, plus `timestamp` and `input`; the
 sample file's first video has 51 keys.
