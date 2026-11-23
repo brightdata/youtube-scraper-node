@@ -457,7 +457,7 @@ carries the fields that apply to it, plus `timestamp` and `input`; the
 sample file's first video has 51 keys.
 
 <details>
-<summary>All 49 video fields, <code>gd_lk56epmy2i5g7lzu0k</code></summary>
+<summary>All 58 video fields, <code>gd_lk56epmy2i5g7lzu0k</code></summary>
 
 | field | type | description |
 | --- | --- | --- |
@@ -510,6 +510,15 @@ sample file's first video has 51 keys.
 | `ai_content_label` | boolean | Indicates whether the video has been labeled as AI-generated or significantly AI-altered, either by the creator or auto-detected by YouTube. |
 | `live_status` | text | Livestream status of the video, equivalent to yt-dlp's live_status. One of "is_live", "was_live", or "not_live", parsed from YouTube's info string (e.g. "Streamed live 29 minutes ago") or defaulted to "not_live" for regular videos |
 | `comments` | array | 10 Most relevant comments of the video |
+| `video_size_bytes` | number | video_size_bytes |
+| `audio_size_bytes` | number | audio_size_bytes |
+| `total_size_bytes` | number | total_size_bytes |
+| `video_itag` | number | video_itag |
+| `still_image_probability` | number | still_image_probability |
+| `static_score` | number | static_score |
+| `original_audio_country` | text | Country of original audio |
+| `is_web_embedded_player` | boolean | Requires web embedded player |
+| `original_audio_track_language` | text | The audio tracks language |
 
 </details>
 
