@@ -138,7 +138,7 @@ instead of raw rows. This package is ESM, so use `import`, not `require`.
 `videos`:
 
 ```javascript
-import { scrape } from "@brightdata/youtube-scraper-node";
+import { scrape } from "@brightdata/youtube-scraper";
 
 for (const outcome of await scrape(["python tutorial", "home workout"], { limit: 1 })) {
   if (outcome.ok) {
@@ -191,7 +191,7 @@ input the API accepts in the same options object, named as the API names it:
 ### Scrape a YouTube video by URL
 
 ```javascript
-import { videos } from "@brightdata/youtube-scraper-node";
+import { videos } from "@brightdata/youtube-scraper";
 
 const [video] = await videos("https://www.youtube.com/watch?v=jNQXAC9IVRw");
 console.log(video.title, "|", video.youtuber, "|", video.date_posted.slice(0, 10));
@@ -210,7 +210,7 @@ Collecting a video by URL took 12 to 178 seconds. Shorts URLs work the same way.
 ### Scrape YouTube video transcripts
 
 ```javascript
-import { videos } from "@brightdata/youtube-scraper-node";
+import { videos } from "@brightdata/youtube-scraper";
 
 const url = "https://www.youtube.com/watch?v=jNQXAC9IVRw";
 const [video] = await videos(url, { transcription_language: "English" });
@@ -236,7 +236,7 @@ milliseconds. `transcript_language` lists the languages YouTube offers, and
 ### Scrape YouTube search results with filters
 
 ```javascript
-import { searchFilters } from "@brightdata/youtube-scraper-node";
+import { searchFilters } from "@brightdata/youtube-scraper";
 
 const found = await searchFilters("python tutorial", {
   limit: 2,
@@ -265,7 +265,7 @@ an HTTP 400, `["duration", "This value is not allowed"]`.
 ### Scrape YouTube Shorts by hashtag
 
 ```javascript
-import { hashtag } from "@brightdata/youtube-scraper-node";
+import { hashtag } from "@brightdata/youtube-scraper";
 
 for (const video of await hashtag("baking", { limit: 2 })) {
   if (video.error) {
@@ -287,7 +287,7 @@ it to a window.
 ### Scrape YouTube comments from a video
 
 ```javascript
-import { comments } from "@brightdata/youtube-scraper-node";
+import { comments } from "@brightdata/youtube-scraper";
 
 for (const comment of await comments("https://www.youtube.com/watch?v=jNQXAC9IVRw", { limit: 3 })) {
   console.log(comment.likes, "|", comment.username, "|", comment.comment_text.slice(0, 50));
@@ -306,7 +306,7 @@ The limit is the `num_of_comments` input: 3 asked, 3 returned, in 43 seconds.
 ### Scrape YouTube channel data
 
 ```javascript
-import { channels } from "@brightdata/youtube-scraper-node";
+import { channels } from "@brightdata/youtube-scraper";
 
 const [channel] = await channels("https://www.youtube.com/@NASA/about");
 console.log(channel.name, channel.handle);
@@ -323,7 +323,7 @@ The fastest call: 12 seconds.
 ### Find YouTube channels by keyword
 
 ```javascript
-import { channelsSearch } from "@brightdata/youtube-scraper-node";
+import { channelsSearch } from "@brightdata/youtube-scraper";
 
 for (const channel of await channelsSearch("home cooking", { limit: 2 })) {
   console.log(channel.subscribers, channel.name, channel.url);
@@ -338,7 +338,7 @@ for (const channel of await channelsSearch("home cooking", { limit: 2 })) {
 ### Scrape YouTube podcast episodes
 
 ```javascript
-import { podcast } from "@brightdata/youtube-scraper-node";
+import { podcast } from "@brightdata/youtube-scraper";
 
 const playlist = "https://www.youtube.com/playlist?list=PLbnMTcZEga8QCKJvxsJVQV4uHD6bENdnP";
 for (const episode of await podcast(playlist, { limit: 2 })) {
@@ -357,7 +357,7 @@ method for this one.
 ### Scrape the YouTube explore and gaming pages
 
 ```javascript
-import { explore } from "@brightdata/youtube-scraper-node";
+import { explore } from "@brightdata/youtube-scraper";
 
 for (const video of await explore("https://www.youtube.com/gaming/games", { limit: 2 })) {
   console.log(video.live_status, video.views, "|", video.title.slice(0, 50));
@@ -375,7 +375,7 @@ The gaming page is mostly live streams, so `live_status` is `is_live` and
 ### Scrape a YouTube channel's videos
 
 ```javascript
-import { channelVideos } from "@brightdata/youtube-scraper-node";
+import { channelVideos } from "@brightdata/youtube-scraper";
 
 for (const row of await channelVideos("https://www.youtube.com/@NASA/videos", { limit: 2 })) {
   if (row.error) console.log("error:", row.error_code, row.error);
@@ -401,7 +401,7 @@ Trigger, keep the snapshot id, fetch when ready. Snapshots stay downloadable
 for 30 days.
 
 ```javascript
-import { CHANNELS, fetchSnapshot, status, trigger } from "@brightdata/youtube-scraper-node";
+import { CHANNELS, fetchSnapshot, status, trigger } from "@brightdata/youtube-scraper";
 
 const snapshot = await trigger(CHANNELS, [{ url: "https://www.youtube.com/@NASA/about" }]);
 console.log("snapshot:", snapshot);

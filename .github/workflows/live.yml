@@ -158,7 +158,7 @@ jobs:
           set -o pipefail
           node - <<'JS' | tee -a "$GITHUB_STEP_SUMMARY"
           import assert from "node:assert/strict";
-          import { CHANNELS, fetchSnapshot, status, trigger } from "@brightdata/youtube-scraper-node";
+          import { CHANNELS, fetchSnapshot, status, trigger } from "@brightdata/youtube-scraper";
 
           const sid = await trigger(CHANNELS, [{ url: "https://www.youtube.com/@NASA/about" }]);
           let state;

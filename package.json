@@ -1,8 +1,7 @@
 {
-  "name": "@brightdata/youtube-scraper-node",
+  "name": "@brightdata/youtube-scraper",
   "version": "0.1.0",
   "description": "YouTube scraper in JavaScript: videos, transcripts, Shorts, channels and comments as JSON, by URL, keyword, hashtag or channel, on the Bright Data YouTube Scraper API. No YouTube API key, no quota, no dependencies. 5,000 free credits a month.",
-  "private": true,
   "type": "module",
   "license": "Apache-2.0",
   "engines": {
@@ -19,7 +18,7 @@
     "src"
   ],
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test",
     "lint": "oxlint src tests"
   },
   "devDependencies": {
@@ -32,5 +31,9 @@
   "bugs": {
     "url": "https://github.com/brightdata/youtube-scraper-node/issues"
   },
-  "homepage": "https://github.com/brightdata/youtube-scraper-node#readme"
+  "homepage": "https://github.com/brightdata/youtube-scraper-node#readme",
+  "publishConfig": {
+    "access": "public",
+    "provenance": false
+  }
 }
