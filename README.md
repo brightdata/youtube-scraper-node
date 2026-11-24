@@ -342,6 +342,10 @@ import { podcast } from "@brightdata/youtube-scraper-node";
 
 const playlist = "https://www.youtube.com/playlist?list=PLbnMTcZEga8QCKJvxsJVQV4uHD6bENdnP";
 for (const episode of await podcast(playlist, { limit: 2 })) {
+  if (episode.error) {
+    console.log("error row:", episode.error);
+    continue;
+  }
   console.log(episode.date_posted.slice(0, 10), episode.views, "|", episode.title.slice(0, 60));
 }
 ```
@@ -360,6 +364,10 @@ method for this one.
 import { explore } from "@brightdata/youtube-scraper-node";
 
 for (const video of await explore("https://www.youtube.com/gaming/games", { limit: 2 })) {
+  if (video.error) {
+    console.log("error row:", video.error);
+    continue;
+  }
   console.log(video.live_status, video.views, "|", video.title.slice(0, 50));
 }
 ```
